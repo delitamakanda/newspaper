@@ -17,7 +17,7 @@ export default function RootLayout({
     <html lang="en">
       <head />
 
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-white dark:bg-zinc-100 transition-all duration-7`}>
         <Header />
           {children}
         </body>
