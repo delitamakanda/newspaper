@@ -141,13 +141,9 @@ CORS_ORIGIN_WHITELIST = (
 )
 
 AUTHENTICATION_BACKENDS = [
-    'graphql_jwt.backends.JSONWebTokenBackend',
     'django.contrib.auth.backends.ModelBackend',
 ]
 
 GRAPHENE = {
     'SCHEMA': 'news.schema.schema',
-    'MIDDLEWARE': [
-        'graphql_jwt.middleware.JSONWebTokenMiddleware',
-    ]
 }
