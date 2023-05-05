@@ -127,6 +127,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+newspaperenv/
 
 # Spyder project settings
 .spyderproject
