@@ -1,7 +1,12 @@
-export default function Home() {
+import { categories } from "@/constants"
+import fetchNews from "@/lib/fetchNews";
+
+export default async function Home() {
+  // const news: NewsResponse = await fetchNews(categories.join(','))
+
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      Homepage
+    <main className="">
     </main>
   )
 }
+
