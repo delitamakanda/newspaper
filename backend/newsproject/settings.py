@@ -146,6 +146,20 @@ AUTHENTICATION_BACKENDS = [
 
 GRAPHENE = {
     'SCHEMA': 'news.schema.schema',
+    'SCHEMA_INDENT': 4,
+    'MIDDLEWARE': [
+        'graphene_django_extras.ExtraGraphQLDirectiveMiddleware',
+    ]
 }
 
 MEDIASTACK_API_KEY = os.environ.get('MEDIASTACK_ACCESS_KEY') or ''
+
+
+GRAPHENE_DJANGO_EXTRAS = {
+    'DEFAULT_PAGINATION_CLASS': 'graphene_django_extras.paginations.LimitOffsetGraphqlPagination',
+    'DEFAULT_PAGE_SIZE': 5,
+    'MAX_PAGE_SIZE': 5,
+    'CACHE_ACTIVE': True,
+    'CACHE_TIMEOUT': 300
+}
+
