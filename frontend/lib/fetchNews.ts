@@ -1,10 +1,10 @@
 import { gql } from "graphql-request";
 import sortNewsByImage from "./sortNewsByImage";
 
-const fetchNews = async (category?: Category | string, keyword?: string, isDynamic?: boolean) => {
+const fetchNews = async (category = "", keyword = "", isDynamic = false) => {
     const query = gql`
     query {
-        allArticles {
+        allArticles(category_Icontains: "${category}", title_Icontains: "${keyword}", description_Icontains: "${keyword}") {
           totalCount
           results(limit:25, offset: 0) {
             publishedAt

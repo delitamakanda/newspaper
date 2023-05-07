@@ -10,7 +10,7 @@ export default function SearchBox() {
         if (!input) {
             return;
         }
-        router.push(`/search?textvalue=${input}`);
+        router.push(`/search?term=${input}`);
     }
     return (
         <form onSubmit={handleSearch} className="max-w-6xl mx-auto flex justify-between items-center px-5">
