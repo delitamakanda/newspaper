@@ -14,7 +14,7 @@ class Article(models.Model):
     published_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'{self.title} by {self.author.first_name} {self.author.last_name}'
+        return f'{self.title} by {self.author}'
 
     class Meta:
         ordering = ['-published_at']

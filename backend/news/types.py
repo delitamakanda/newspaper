@@ -23,5 +23,5 @@ class ArticleType(DjangoObjectType):
 class ArticleListType(DjangoListObjectType):
     class Meta:
         model = Article
-        pagination = LimitOffsetGraphqlPagination(default_limit=5, ordering='-published_at')
+        pagination = LimitOffsetGraphqlPagination(default_limit=25, ordering='-published_at')
         
