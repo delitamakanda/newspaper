@@ -17,9 +17,11 @@ export default function RootLayout({
     <html lang="en">
       <head />
 
-      <body className={`${inter.className} bg-white dark:bg-zinc-100 transition-all duration-7`}>
+      <body className={`${inter.className} bg-gray-100 dark:bg-zinc-100 transition-all duration-7`}>
         <Header />
+          <div className="max-w-6xl mx-auto">
           {children}
+          </div>
         </body>
     </html>
   )

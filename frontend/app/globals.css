@@ -7,3 +7,229 @@
       @apply hover:underline decoration-orange-400 text-center decoration-2 active:underline underline-offset-8 rounded-full p-4 cursor-pointer hover:font-bold capitalize hover:scale-110 transition-transform duration-200 ease-out;
     }
 }
+
+.c-newspaper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.c-newspaper__col {
+  --gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 550px) {
+  .c-newspaper {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .c-newspaper__col:first-child {
+    grid-column: 2/4;
+  }
+  .c-newspaper__col:nth-child(2) {
+    grid-column: 1/2;
+    grid-row: 1;
+  }
+  .c-newspaper__col:last-child {
+    display: flex;
+    grid-column: 1/4;
+  }
+  .c-newspaper__item:not(:last-child):after {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: lightgrey;
+    margin-block: var(--gap);
+  }
+  
+  .c-newspaper__col:last-child {
+    border-top: 1px solid lightgrey;
+    padding-top: var(--gap);
+  }
+
+  @container style(--thumb: grid-2) {
+    .c-card__thumb {
+      display: none;
+    }
+  }
+}
+@media screen and (min-width: 880px) {
+  .c-newspaper {
+    grid-template-columns: 1fr 2fr 1fr;
+  }
+  .c-newspaper__col:first-child {
+    grid-column: 2/3;
+  }
+  .c-newspaper__col:last-child {
+    grid-column: 3/4;
+  }
+  .c-newspaper__col:last-child {
+    padding-top: 0;
+    border-top: 0;
+  }
+  
+  /* Add separators to the last column */
+  .c-newspaper__col:last-child .c-newspaper__item:not(:last-child):after {
+    content: "";
+    display: block;
+    height: 1px;
+    background-color: lightgrey;
+    margin-block: var(--gap);
+  }
+
+  @container style(--thumb: grid-2) {
+    .c-card__thumb {
+      display: block;
+    }
+  }
+}
+.c-newspaper__item {
+  container-type: inline-size;
+  container-name: card;
+  design: cool;
+}
+
+.c-card {
+  --flow-space: 1.25rem;
+}
+
+.c-card__thumb {
+  flex: 0 0 30%;
+}
+.c-card__thumb img {
+  width: 100%;
+}
+
+.c-card__content {
+  --flow-space: 0.25rem;
+}
+
+.c-card__title {
+  font-weight: bold;
+  color: #4c4e4d;
+  text-wrap: balance;
+}
+
+.card__tease {
+  color: #666666;
+  font-size: 14px;
+}
+
+.c-card__meta {
+  font-size: 14px;
+  color: #666;
+}
+.c-card__meta a {
+  color: #4f7177;
+  text-decoration: none;
+}
+
+@container card (min-width: 280px) and style(--horizontal: true) and style(--thumb: mobile-only) {
+  .c-card__thumb {
+    display: block;
+  }
+}
+
+@container card (min-width: 300px) and style(--horizontal: true) {
+  .c-card {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+.c-card__thumb img {
+  aspect-ratio: 5/3;
+  object-fit: cover;
+}
+
+.wrapper {
+  padding-inline: 1rem;
+  container-name: main;
+  container-type: inline-size;
+}
+
+@container main (min-width: 1px) {
+  .c-card__meta {
+    font-family: "Playfair Display", serif;
+  }
+}
+
+@container card (min-width: 280px) and style(--horizontal: true) {
+  .c-card {
+    display: flex;
+    gap: 1rem;
+  }
+}
+
+@container main (min-width: 550px) {
+  @container card style(--flipped: true) {
+      .c-card__thumb {
+          order: 2;
+      }
+  }
+}
+
+@container style(--thumb: mobile-only) {
+  .c-card__thumb {
+    display: none;
+  }
+}
+
+@container style(--featured: true) {
+  .c-card {
+      display: flex;
+      gap: 1rem;
+  }
+
+  .c-card__thumb {
+      flex: 0 0 50%;
+  }
+
+  .c-card__tease {
+      font-family: "Playfair Display", serif;
+      font-size: 19px;
+      font-style: italic;
+  }
+}
+@container main (min-width: 550px) {
+  @container card style(--featured: true) {
+      .c-card {
+          flex-direction: column;
+          gap: 0;
+      }
+
+      .c-card__title {
+        font-size: clamp(1rem, 6cqw, 2rem);
+    }
+
+      .c-card__content {
+          text-align: center;
+      }
+      
+      .c-card__tease {
+        font-family: "Playfair Display", serif;
+        font-size: 19px;
+      }
+  }
+}
+@container main (min-width: 550px) {
+  @container card style(--compact: 2) {
+    .c-card__title {
+      font-size: 19px;
+    }
+  }
+}
+
+img {
+  max-width: 100%;
+  object-fit: cover;
+}
+
+@container main (min-width: 550px) {
+  @container card style(--compact: 2) {
+      .c-card__title {
+          font-size: 19px;
+      }
+  }
+}

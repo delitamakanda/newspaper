@@ -9,28 +9,22 @@ type Category =
     | "fashion"
     | "finance";
 
+type NewsResponse = {
+    totalCount: Int;
+    results: Article[];
+}
 
-type Data = {
+type Article = {
+    id: Int;
     author: string;
     category: string;
     country: string;
     description: string;
     url: string;
     title: string;
-    published_at: string;
+    publishedAt: string;
     source: string;
     language: string;
-    image: string;
+    image: string | null;
 }
 
-type Pagination = {
-    count: Int;
-    limit: Int;
-    offset: Int;
-    total: Int;
-}
-
-type NewsResponse = {
-    pagination: Pagination;
-    data: Data[];
-}
