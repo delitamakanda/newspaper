@@ -14,3 +14,6 @@
 
 # screenshot
 ![GraphQL](query.png)
+![Article](article.png)
+![Homepage Light](homepage.png)
+![Homepage Dark](homepage-dark.png)
