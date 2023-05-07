@@ -6,7 +6,7 @@ const fetchNews = async (category = "", keyword = "", isDynamic = false) => {
     query {
         allArticles(category_Icontains: "${category}", title_Icontains: "${keyword}", description_Icontains: "${keyword}") {
           totalCount
-          results(limit:25, offset: 0) {
+          results(ordering: "-published_at") {
             publishedAt
             id
             title
