@@ -1,5 +1,6 @@
 import { formatWithOptions } from 'date-fns/fp'
 import { fr } from 'date-fns/locale'
+import ReadMoreButton from './ReadMoreButton';
 
 type Props = {
     item: Article;
@@ -8,7 +9,7 @@ type Props = {
 export default function Article({item}: Props) {
 
     return (
-        <article key={item.id} className="c-card bg-slate-100 transition-all duration-200 ease-out hover:shadow-lg hover:scale-105 rounded-lg shadow-sm hover:bg-slate-200">
+        <article key={item.id} className="c-card bg-slate-100 dark:bg-zinc-900 transition-all duration-200 ease-out hover:shadow-lg hover:scale-105 rounded-lg shadow-sm hover:bg-slate-200">
             <div className="c-card__thumb">
                 {item.image && <img className="rounded-t-lg shadow-md w-full" src={item.image} />}
             </div>
@@ -22,6 +23,7 @@ export default function Article({item}: Props) {
                     </p>
                     
                 </footer>
+                <ReadMoreButton article={item} />
             </div>
         </article>
     )
