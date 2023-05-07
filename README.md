@@ -28,6 +28,11 @@ python3 manage.py migrate
 python3 manage.py runserver
 ```
 
+#### fetch news from MediastackAPI
+```bash
+python3 manage.py populate_news
+```
+
 2. set up frontend
 
 ```bash
@@ -54,6 +59,7 @@ npm run dev
 * Django
 * Graphene
 * Container queries
+* [MediaStack API](https://mediastack.com/)
 
 # screenshot
 ![GraphQL](query.png)
